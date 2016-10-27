@@ -217,6 +217,12 @@ _:-ms-input-placeholder, :root .demo-graph {
   text-decoration: none;
 }
 
+.mini_fab_color {
+ background: #00BCD4;
+    color: rgb(66,66,66);
+
+}
+
 .demo-options h3 {
   margin: 0;
 }
@@ -242,4 +248,20 @@ _:-ms-input-placeholder, :root .demo-graph {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+/* Fab button */
+
+.add_fab {
+  overflow: visible;
+  z-index: 10;
+}
+
+.add_fab > button {
+ bottom: -250px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+  -webkit-transform: translate(0px, -28px);
+  transform: translate(0px, -28px);
 }
