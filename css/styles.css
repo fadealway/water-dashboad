@@ -265,3 +265,121 @@ _:-ms-input-placeholder, :root .demo-graph {
   -webkit-transform: translate(0px, -28px);
   transform: translate(0px, -28px);
 }
+
+
+
+/* tree diagram */
+
+
+.tree {
+  /*-webkit-transform: rotate(180deg);
+          transform: rotate(180deg);*/
+  /*-webkit-transform-origin: 50%;
+          transform-origin: 50%;*/
+}
+
+.tree ul {
+  position: relative;
+  padding: 1em 0;
+  white-space: nowrap;
+  margin: 0 auto;
+  text-align: center;
+}
+.tree ul::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.tree li {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 1em .5em 0 .5em;
+  /* Standard syntax */
+}
+.tree li::before, .tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 5px dashed #00bcd4;
+  width: 50%;
+  height: 0.7em;
+  -webkit-animation: 1s mymove ease infinite;
+  /* Chrome, Safari, Opera */
+  animation: 1s mymove ease infinite;
+}
+@-webkit-keyframes mymove {
+  to {
+    border-top: 5px solid #00bcd4;
+  }
+}
+@keyframes mymove {
+  to {
+    display: block;
+    border-top: 5px solid #00bcd4;
+  }
+}
+.tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 5px solid #00bcd4;
+}
+.tree li:only-child::after, .tree li:only-child::before {
+  display: none;
+}
+.tree li:only-child {
+  padding-top: 0;
+}
+.tree li:first-child::before, .tree li:last-child::after {
+  border: 0 none;
+  display: none;
+}
+.tree li:last-child::before {
+  border-right: 5px solid #00bcd4;
+  -webkit-animation: 1s mymove ease infinite;
+          animation: 1s mymove ease infinite;
+}
+@-webkit-keyframes mymove2 {
+  to {
+    display: block;
+    border-right: 5px solid #FAFAFA;
+  }
+}
+@keyframes mymove2 {
+  to {
+    display: block;
+    border-right: 5px solid #FAFAFA;
+  }
+}
+.tree ul ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 5px solid #00bcd4;
+  width: 0;
+  height: 1em;
+}
+
+.tree li a {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  padding: 2px 16px;
+  padding: .5em .75em;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  color: #333;
+  /*background: #fafafa;*/
+  position: relative;
+  top: 5px;
+  /*-webkit-transform: rotate(180deg);
+          transform: rotate(180deg);*/
+}
+
+
